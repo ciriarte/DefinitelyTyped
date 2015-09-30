@@ -79,6 +79,8 @@ declare type HeaderInit = Headers|Array<string>;
 declare type BodyInit = Blob|FormData|string;
 declare type RequestInfo = Request|string;
 
-interface Window {
-	fetch(url: string|Request, init?: RequestInit): Promise<Response>;
+declare function fetch(url: string|Request, init?: RequestInit): Promise<Response>;
+
+declare module "whatwg-fetch" {
+    export default fetch;
 }
